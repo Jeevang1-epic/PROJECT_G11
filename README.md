@@ -22,7 +22,6 @@ G11 is a local desktop assistant built for the **HackWithDC** competition. It ut
 
 * **Run the agent**:
 
-``Bash
 python brain.py
 
 ## Future Roadmap
