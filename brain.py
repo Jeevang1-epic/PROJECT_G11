@@ -8,7 +8,6 @@ from tools import manage_file, open_app, capture_screen
 load_dotenv()
 
 # 1. Setup Brain (Ollama)
-# Using Qwen 2.5 Coder 7B as requested
 llm = ChatOllama(
     model="qwen2.5-coder:7b", 
     temperature=0,
@@ -19,8 +18,6 @@ llm = ChatOllama(
 search_tool = LinkupSearchTool(depth="deep", output_type="sourcedAnswer")
 tools = [search_tool, manage_file, open_app, capture_screen]
 
-# 3. Create the G11 Engine
-# create_react_agent handles the Think-Act-Observe loop automatically
 agent_executor = create_react_agent(llm, tools)
 
 def run_mission():
@@ -50,4 +47,5 @@ def run_mission():
             print(f"\n[System Error]: {e}")
 
 if __name__ == "__main__":
+
     run_mission()
